@@ -1,0 +1,15 @@
+local ArceusUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/SPDM-Team/ArceusX-V3-Scripts/main/ArceusUI.lua"))()
+local myButton = ArceusUI:AddButton("Get All Skins", function(local WeaponOwnRange = { min=1, max=5 } local DataBase, PlayerData = getrenv()._G.Database, getrenv()._G.PlayerData local newOwned = {} for i,v in next, DataBase.Item do newOwned[i] = math.random(WeaponOwnRange.min, WeaponOwnRange.max) -- newOwned[Weapon]: ItemCount end local PlayerWeapons = PlayerData.Weapons game:GetService("RunService"):BindToRenderStep("InventoryUpdate", 0, function() PlayerWeapons.Owned = newOwned end) game.Players.LocalPlayer.Character.Humanoid.Health = 0)
+    local extraValues = {...}
+    print("Pressed")
+end, myExtraValues)
+ArceusUI:SetTitle("Arceus UI - MM2 (GET ALL SKINS?! YES!) <font color='rgb(255, 0, 0)'>|</font> MyScript")
+ArceusUI:SetLogo("MyLogo.png", "https://mywebsite/myimage.png")
+local myToggle = ArceusUI:AddToggle("MyToggle", function(myStatus, ...)
+    local extraValues = {...}
+    print("Toggle status:", myStatus)
+end, myExtraValues)
+local myNewFrame = Instance.new("Frame")
+myNewFrame.Parent = ArceusUI:Parent()
+ArceusUI:Remove()
+ArceusUI:Start()
